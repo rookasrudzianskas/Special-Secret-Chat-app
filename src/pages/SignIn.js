@@ -1,8 +1,8 @@
 import React from "react";
 import firebase from 'firebase/app';
 import 'rsuite/dist/styles/rsuite-default.css';
-import {Container, Grid, Row, Col, Panel, Button, Icon } from 'rsuite';
-import { auth } from '../misc/firebase';
+import {Container, Grid, Row, Col, Panel, Button, Icon, Alert} from 'rsuite';
+import { auth, database } from '../misc/firebase';
 
 
 /* eslint-disable */
@@ -10,9 +10,20 @@ import { auth } from '../misc/firebase';
 const SingIn = () => {
 
     const signInWithProvider = async (provider) => {
+        try {
+            const {additionalUserInfo, user} = await auth.signInWithPopup(provider);
 
-       const result = await auth.SignInWithPopup(provider);
-        console.log(result);
+            if(additionalUserInfo.isNewUser) {
+                await database.ref(`/profiles/${user.uid}`).set({
+                    name: user.displayName,
+                    createdAt: firebase.database.ServerValue.TIMESTAMP
+                })
+            }
+            Alert.success("Signed In", 4000);
+        }catch (err) {
+            Alert.info(err.message, 4000);
+        }
+
     }
 
     const onFacebookSignIn = () => {
