@@ -7,7 +7,7 @@ import {storage, database} from '../../misc/firebase';
 
 const fileInputTypes = '.png, .jpeg, .jpg';
 
-const acceptedFileTypes = ['image/png', 'image/jpeg', 'image/pjpeg'];
+const acceptedFileTypes = ['image/png', 'image/jpeg', 'image/jpg'];
 const isValidFile = file => acceptedFileTypes.includes(file.type);
 
 const getBlob = canvas => {
