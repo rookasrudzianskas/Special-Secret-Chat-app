@@ -11839,7 +11839,7 @@
     "regenerator-runtime" "^0.13.7"
     "whatwg-fetch" "^3.4.1"
 
-"react-avatar-editor@^11.0.13":
+"react-avatar-editor@^11.1.0":
   "integrity" "sha512-Z89qLKS3skld2Ov80EvCCzZKz87eLiEEhwJRYsGG6k2OM0Bo+V0dFrM2i0yAPeGjyagmTkoOSkQgDUfM+zc1vw=="
   "resolved" "https://registry.npmjs.org/react-avatar-editor/-/react-avatar-editor-11.1.0.tgz"
   "version" "11.1.0"
