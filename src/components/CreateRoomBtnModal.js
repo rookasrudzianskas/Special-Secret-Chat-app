@@ -46,7 +46,7 @@ const CreateRoomBtnModal = () => {
             setFormValue(INITIAL_FORM);
             close();
 
-            Alert.info(`${formValue.name} has been created`, 4000);
+            Alert.info(`${formValue.name} room has been created`, 4000);
 
         } catch (err) {
             setIsLoading(false);
