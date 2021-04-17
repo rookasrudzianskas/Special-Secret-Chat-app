@@ -1,7 +1,8 @@
 import React from "react";
 import DashboardToggle from "./dashboard/DashboardToggle";
 import CreateRoomBtnModal from "./CreateRoomBtnModal";
-// import {Col, Grid, Row, Sidebar} from "rsuite";
+import {Divider} from "rsuite";
+import ChatRoomList from "./rooms/ChatRoomList";
 
 const Sidebar = () => {
     return (
@@ -9,8 +10,9 @@ const Sidebar = () => {
             <div>
                 <DashboardToggle />
                 <CreateRoomBtnModal />
+                <Divider>Join the conversation</Divider>
             </div>
-            bottom
+            <ChatRoomList></ChatRoomList>
         </div>
     );
 };
