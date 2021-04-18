@@ -12,14 +12,13 @@ export const RoomsProvider = ({children}) => {
         const roomListRef = database.ref('rooms');
 
 
-
         roomListRef.on('value', (snap) => {
             const data = transformToArrWithId(snap.val())
             setRooms(data);
         });
 
         return () => {
-            roomListRef.off()
+            roomListRef.off();
         }
 
     }, []);
