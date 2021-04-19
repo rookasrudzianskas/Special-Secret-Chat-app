@@ -5,7 +5,7 @@ import './styles/main.scss';
 import { Switch} from "react-router";
 import SignIn from "./pages/SignIn";
 import PrivateRoutes from "./components/PrivateRoutes";
-import Home from "./pages/Home";
+import Index from "./pages/Home";
 import PublicRoute from "./components/PublicRoute";
 import { ProfileProvider } from './context/profile.context';
 
@@ -17,7 +17,7 @@ function App() {
                     <SignIn />
                 </PublicRoute>
                 <PrivateRoutes path="/">
-                    <Home />
+                    <Index />
             </PrivateRoutes>
         </Switch>
       </ProfileProvider>
