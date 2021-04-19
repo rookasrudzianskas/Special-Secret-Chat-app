@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { memo } from 'react';
+import {useCurrentRoom} from "../../../context/current-room.context";
 
-const ChatTop = () => {
+const Top = () => {
+
+    const name = useCurrentRoom(v => v.name);
+
     return (
         <div>
-            ChatTop
+            {name}
         </div>
     );
 };
 
-export default ChatTop;
+export default memo(Top);
