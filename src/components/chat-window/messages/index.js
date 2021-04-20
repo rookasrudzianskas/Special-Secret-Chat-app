@@ -22,7 +22,7 @@ const Messages = () => {
 
         return () => {
             messagesRef.off('value');
-        }
+        };
 
     }, [chatId]);
 
@@ -33,6 +33,6 @@ const Messages = () => {
             {canShowMessages && messages.map(msg => <MessageItem key={msg.id} message={msg}/>)}
         </ul>
     );
-}
+};
 
 export default Messages;
