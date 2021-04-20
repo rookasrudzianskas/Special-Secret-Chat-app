@@ -5,7 +5,7 @@ import {transformToArrWithId} from "../../../misc/helpers";
 import MessageItem from "./MessageItem";
 
 const Messages = () => {
-    const { chatId } = useParams()
+    const {chatId} = useParams()
     const [messages, setMessages] = useState(null)
 
     const isChatEmpty = messages && messages.length === 0;
@@ -33,6 +33,6 @@ const Messages = () => {
             {canShowMessages && messages.map(msg => <MessageItem key={msg.id} message={msg}/>)}
         </ul>
     );
-};
+}
 
 export default Messages;
